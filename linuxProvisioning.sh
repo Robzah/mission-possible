@@ -18,13 +18,13 @@ test_tomcat(){
     response=$(curl -sSo /dev/null 2>> "$LOGFILE" -w '%{response_code}' "$TOMCAT_URL")
     if [ $response -eq 200 ]; then
         echo "installation complete..."
-	      echo  "tomcat manager available at..."
+        echo "tomcat manager available at..."
         echo "http://192.168.0.40:8080/manager/html"
         echo "Username: admin  password: admin"
     else
-	      echo "An error occurred during tomcat installation"
-        echo "Please check" "$LOGFILE" 
-	      exit -1
+        echo "An error occurred during tomcat installation"
+        echo "Please check" "$LOGFILE"
+        exit -1
     fi
 }
 
